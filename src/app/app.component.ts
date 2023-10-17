@@ -28,17 +28,6 @@ export class AppComponent {
   }
 
   // couleur sur le menu choisi
-  IsAccueilSelected(): boolean {
-
-    // console.log("IsAccueilSelected");
-    // console.log(this.router.url);
-
-    if (this.router.url == "/") {
-      return true;
-    }
-    return false;
-  }
-  // couleur sur le menu choisi
   IsCoursSelected(): boolean {
 
     // console.log("IsCoursSelected");

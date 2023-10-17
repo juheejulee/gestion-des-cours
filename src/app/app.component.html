@@ -1,7 +1,5 @@
 <div id="menu">
   <div>
-    <a [ngClass]="{'selected': IsAccueilSelected()}" *ngIf="security.isConnected()" routerLink=""
-      routerLinkActive="active" ariaCurrentWhenActive="page">Accueil</a>
     <a [ngClass]="{'selected': IsCoursSelected()}" *ngIf="security.isConnected()" routerLink="cours"
       routerLinkActive="active" ariaCurrentWhenActive="page">Cours</a>
     <a [ngClass]="{'selected': IsEtudiantsSelected()}" *ngIf="security.isConnected()" routerLink="etudiants"

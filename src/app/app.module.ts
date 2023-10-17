@@ -8,7 +8,6 @@ import { EtudiantsComponent } from './etudiants/etudiants.component';
 import { LoginComponent } from './login/login.component';
 import { MessageComponent } from './message/message.component';
 import { OopsComponent } from './oops/oops.component';
-import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,7 +21,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     MessageComponent,
     OopsComponent,
-    HomeComponent
   ],
   imports: [
     BrowserModule,

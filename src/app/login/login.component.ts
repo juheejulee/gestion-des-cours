@@ -24,8 +24,8 @@ export class LoginComponent {
     this.security.connected.subscribe((isConnected) => {
       // on va appeler la fonction validateCredentials du service security.service.ts pour valider
       if (isConnected) {
-        // si connecte --> navigate Home
-        this.router.navigate(['']);
+        // si connecte --> navigate cours
+        this.router.navigate(['cours']);
       } else {
         setTimeout(() => {
           this.errorMessage = 'Login Error' // au lieu d'alerte, afficher ce message sous le bouton Connexion
