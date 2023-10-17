@@ -1,0 +1,53 @@
+// * {
+//     padding-left: 20px;
+//     font-family: Arial, Helvetica, sans-serif;
+// }
+
+body {
+    width: 80%;
+    margin: 10vw auto;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 40px;
+    padding-top: 15px;
+}
+
+h1.heading {
+    font-size: 60px !important;
+    text-align: center;
+}
+
+.center-text {
+    text-align: center;
+}
+
+@media screen and (min-width: 40em) {
+    body {
+        width: 50%;
+    }
+
+    .heading {
+        font-size: 6vw;
+    }
+
+    // .subheading {
+    //     font-size: 1.75vw;
+    // }
+}
+
+.underline--magical {
+    background-image: linear-gradient(120deg, #ddc9b4 0%, #c17c74 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: 0 88%;
+    transition: background-size 0.25s ease-in;
+
+    &:hover {
+        background-size: 100% 88%;
+    }
+}

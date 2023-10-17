@@ -1,0 +1,33 @@
+<!-- <br />
+<a routerLink="" routerLinkActive="" ariaCurrentWhenActive="page">Accueil</a>
+<br /> -->
+
+<div class="login-page">
+    <!-- Utilisateur container -->
+    <div class="center-container-username">
+        <div class="center-content">
+            Utilisateur :
+        </div>
+        <div class="center-content">
+            <input type="text" [(ngModel)]="username" />
+        </div>
+    </div>
+    <br />
+
+    <!-- Mot de passe container -->
+    <div class="center-container-password">
+        <div class="center-content">
+            Mot de passe :
+        </div>
+        <div class="center-content">
+            <input type="password" [(ngModel)]="password" />
+        </div>
+    </div>
+    <br />
+
+    <!-- Connexion button -->
+    <div class="center-container-button">
+        <button (click)="btnLogin()">Connexion</button>
+    </div>
+    <div class="error">{{errorMessage}}</div>
+</div>

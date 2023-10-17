@@ -1,0 +1,23 @@
+/* Center-align container */
+.center-container {
+    text-align: center;
+}
+
+/* Center-align labels and inputs */
+.center-content {
+    display: inline-block;
+    text-align: left;
+    /* Reset text alignment for labels */
+    margin-right: 10px;
+    /* Add some space between labels and inputs */
+}
+
+.login-page {
+    padding-top: 10%;
+    text-align: center;
+}
+
+.error {
+    margin-top: 10px;
+    color: red;
+}

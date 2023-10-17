@@ -1,0 +1,22 @@
+<div class="container">
+    <!-- <h1>Liste de tous les cours</h1> -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Session</th>
+                <th>Departement</th>
+                <th>Cours</th>
+                <th>Professeur</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Use *ngFor to iterate through the courses array and display each course -->
+            <tr *ngFor="let course of courses">
+                <td>{{ course.Semester }}</td>
+                <td>{{ course.Department }}</td>
+                <td>{{ course.Course }}</td>
+                <td>{{ course.TeacherFirstName + ' ' + course.TeacherLastName }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
