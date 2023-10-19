@@ -7,6 +7,7 @@ interface CollegeResponse {
   status: string;
   message: string;
   data: any;
+  //CourseSemesterId: number;
 }
 
 
@@ -40,12 +41,19 @@ export class DataService {
     return this.http.get<CollegeResponse>(urlToCall);
   }
 
-  CourseSemesterStudentGetAll(): Observable<CollegeResponse> {
+  courseSemesterStudentGetAll(courseID: number): Observable<CollegeResponse> {
     let method = 'CourseSemesterStudentGetAll';
-    let parameters = { parameters: [] };
+    let parameters = { parameters: [courseID.toString()] };
     let urlToCall: string = "https://localhost:" + this.port.toString() + "/College?method=" + method + "&parameters=" + JSON.stringify(parameters);
 
     return this.http.get<CollegeResponse>(urlToCall);
+  }
 
+  getAllPersons(typeOfPerson: string): Observable<CollegeResponse> {
+    let method = 'PersonGetAll';
+    let parameters = { parameters: [typeOfPerson] };
+    let urlToCall: string = "https://localhost:" + this.port.toString() + "/College?method=" + method + "&parameters=" + JSON.stringify(parameters);
+
+    return this.http.get<CollegeResponse>(urlToCall);
   }
 }

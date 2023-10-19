@@ -1,8 +1,25 @@
 // espace entre les menus 
 
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    text-align: left;
+    background-color: lightgrey;
+}
+
+.table tr {
+    border-bottom: 1px solid #eeeeee;
+    cursor: pointer;
+}
+
+.table tr:hover {
+    background-color: #eeeeee;
+}
+
 .table th,
 td {
-    padding-right: 65px;
-    padding-top: 10px;
-    padding-left: 10px;
+    padding: 10px;
 }

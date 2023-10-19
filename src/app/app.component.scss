@@ -6,6 +6,7 @@
     padding: 1vh 1vw;
     border-bottom: 2px solid #d8e2dc;
     background-color: #fcd5ce;
+    font-family: Arial, Helvetica, sans-serif;
 
     a {
         display: block;
@@ -27,4 +28,20 @@
 
 a.selected {
     background-color: #fcbcb8;
+}
+
+.logoutBtn-style {
+    background-color: #9cafb7;
+    border: none;
+    color: #766b69;
+    cursor: pointer;
+    width: 105px;
+    height: 30px;
+    text-align: center;
+    border-radius: 30px;
+}
+
+.logoutBtn-style:hover {
+    background-color: #4281a4;
+    color: white;
 }

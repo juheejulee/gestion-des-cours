@@ -6,9 +6,9 @@
       routerLinkActive="active" ariaCurrentWhenActive="page">Etudiants</a>
   </div>
   <!--*ngIf="security.isConnected()" si user n'est pas connecte, on voit pas le menu-->
-  <button *ngIf="security.isConnected()" (click)="logout()">Deconnexion</button>
+  <button *ngIf="security.isConnected()" (click)="logout()" class="logoutBtn-style">Deconnexion</button>
 </div>
 
-<div id="content">
+<div id="content" class="container">
   <router-outlet></router-outlet>
 </div>

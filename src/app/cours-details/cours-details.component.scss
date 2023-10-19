@@ -1,0 +1,61 @@
+.details {
+    position: fixed;
+    bottom: 0;
+    height: 400px;
+    background: #ead2ac;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    border-radius: 4%;
+    background-color: #9cafb7;
+    /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.delete-btn {
+    height: 45px;
+    padding: 16px;
+}
+
+button:hover {
+    background-color: #4281a4;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    text-align: left;
+    background-color: lightgrey;
+}
+
+.table tr {
+    border-bottom: 1px solid black;
+}
+
+.table th,
+td {
+    padding: 10px;
+}
+
+.students-list {
+    flex: 2;
+}
+
+.professor-details {
+    border-left: 5px solid black;
+    flex: 1;
+}

@@ -1,0 +1,32 @@
+<div class="details">
+    <div class="students-list">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom etudiant</th>
+                    <th>Note</th>
+                    <th>Supprimer</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Use *ngFor to iterate through the courses array and display each course -->
+                <tr *ngFor="let student of students">
+                    <td>{{ student.FirstName }} - {{ student.LastName }}</td>
+                    <td *ngIf="student.Grade">{{ student.Grade }}</td>
+                    <td *ngIf="!student.Grade">N/A</td>
+                    <td><button>Supprimer</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="professor-details">
+        <div>Professeur</div>
+        <div *ngFor="let course of courses">
+            <span
+                *ngIf="course.CourseId === currentCourseID && course.Semester === currentCourseSemester">{{course.Semester}}:
+                {{course.TeacherFirstName}}
+                {{course.TeacherLastName}}</span>
+        </div>
+    </div>
+    <button class="delete-btn" (click)="closeModal.emit()">X</button>
+</div>

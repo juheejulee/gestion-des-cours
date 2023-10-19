@@ -11,6 +11,7 @@ import { OopsComponent } from './oops/oops.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CoursDetailsComponent } from './cours-details/cours-details.component';
 //import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
@@ -21,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LoginComponent,
     MessageComponent,
     OopsComponent,
+    CoursDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]

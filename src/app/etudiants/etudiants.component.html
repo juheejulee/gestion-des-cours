@@ -1,1 +1,19 @@
-<p>Etudiants works!</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Prenom</th>
+            <th>Nom</th>
+            <th>Telephone</th>
+            <th>Courriel</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Use *ngFor to iterate through the students array and display each course -->
+        <tr *ngFor="let etudiant of etudiants">
+            <td>{{ etudiant.LastName }}</td>
+            <td>{{ etudiant.FirstName }}</td>
+            <td>{{ etudiant.Phone }}</td>
+            <td>{{ etudiant.Email }}</td>
+        </tr>
+    </tbody>
+</table>

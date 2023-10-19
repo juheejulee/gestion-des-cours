@@ -10,6 +10,10 @@ export class CoursComponent {
   constructor(private data: DataService) { }
 
   courses: any[] = [];
+  courseStudents: string[] = [];
+  currentCourseID: number = 0;
+  currentCourseSemester: string = '';
+  showCourseDetails: boolean = false;
   //selectedCourse: any; // Variable to store the selected course details
 
   ngOnInit() {
@@ -21,6 +25,19 @@ export class CoursComponent {
         console.log('Error fetching courses:', response.message)
       }
     })
+  }
+
+  showDetails(courseID: number, semester: string) {
+    this.data.courseSemesterStudentGetAll(courseID).subscribe((response: any) => {
+      if (response.status === 'success') {
+        this.courseStudents = response.data;
+        this.showCourseDetails = true;
+        this.currentCourseID = courseID;
+        this.currentCourseSemester = semester;
+      } else {
+        console.log('Error fetching courses:', response.message)
+      }
+    });
   }
 
 
