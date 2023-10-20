@@ -2,8 +2,11 @@
     <div class="students-list">
         <table class="table">
             <thead>
+                <!-- <tr>
+                    <th colspan="3">Etudiants inscrits au cours</th>
+                </tr> -->
                 <tr>
-                    <th>Nom etudiant</th>
+                    <th>Nom Etudiant</th>
                     <th>Note</th>
                     <th>Supprimer</th>
                 </tr>
@@ -11,16 +14,27 @@
             <tbody>
                 <!-- Use *ngFor to iterate through the courses array and display each course -->
                 <tr *ngFor="let student of students">
-                    <td>{{ student.FirstName }} - {{ student.LastName }}</td>
+                    <!--Students' information-->
+                    <td>{{ student.FirstName }} {{ student.LastName }}</td>
+                    <!-- Display the students' grade in an input text box-->
                     <td *ngIf="student.Grade">{{ student.Grade }}</td>
                     <td *ngIf="!student.Grade">N/A</td>
-                    <td><button>Supprimer</button></td>
+
+                    <!-- <td *ngIf="!student.editMode">
+                        <span (click)="editGrade(student)">{{ student.Grade || 'N/A' }}</span>
+                    </td>
+                    <td *ngIf="student.editMode">
+                        <input type="text" [(ngModel)]="student.Grade" (blur)="saveGrade(student)" />
+                    </td> -->
+
+                    <!--Delete button-->
+                    <td><button (click)="confirmRemove(student)">Supprimer</button></td>
                 </tr>
             </tbody>
         </table>
     </div>
     <div class="professor-details">
-        <div>Professeur</div>
+        <div class="professor-info">Professeur</div>
         <div *ngFor="let course of courses">
             <span
                 *ngIf="course.CourseId === currentCourseID && course.Semester === currentCourseSemester">{{course.Semester}}:
