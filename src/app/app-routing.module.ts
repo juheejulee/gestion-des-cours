@@ -19,3 +19,7 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
+// AppRoutingModule définit les routes de navigation pour votre application Angular en utilisant le module RouterModule
+// et le service Routes fourni par Angular. 

@@ -1,3 +1,5 @@
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
 .details {
     position: fixed;
     bottom: 0;
@@ -11,8 +13,7 @@
 
 button {
     border-radius: 4%;
-    background-color: #9cafb7;
-    /* Green */
+    background: #f2f7f8;
     border: none;
     color: #1d2d44;
     text-align: center;
@@ -23,15 +24,38 @@ button {
     padding: 8px;
 }
 
+// i class button 
+button i.fa.fa-trash {
+    color: #bc4749;
+}
+
+button:hover i.fa.fa-trash {
+    color: #e63946;
+}
+
+// check i class button
+i.fa-solid.fa-check {
+    color: #6b9db8;
+}
+
+i.fa-solid.fa-check:hover {
+    color: #1d2d44;
+    /* Change the color when the icon is hovered */
+}
+
+
+// delete button x
 .delete-btn {
     height: 45px;
     padding: 16px;
+
 }
 
-button:hover {
+.delete-btn:hover {
     background-color: #4281a4;
     color: white;
 }
+
 
 .table {
     width: 100%;
@@ -49,7 +73,7 @@ thead {
 
 .table th,
 td {
-    padding: 10px;
+    padding: 7px;
 }
 
 .students-list {
@@ -62,9 +86,9 @@ td {
     padding: 40px;
 }
 
-.table tr:hover {
-    background-color: #eeeeee;
-}
+// .table tr:hover {
+//     background-color: #eeeeee;
+// }
 
 .students-list {
     /* Add a fixed height for the container */
@@ -72,5 +96,9 @@ td {
     /* Adjust the height as needed */
     overflow-y: auto;
     /* Enable vertical scrolling */
+}
 
+.toggleTeacher {
+    margin-bottom: 10px;
+    border-bottom: 2px dotted #d8e2dc;
 }

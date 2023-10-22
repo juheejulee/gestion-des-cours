@@ -12,3 +12,13 @@
 <div id="content" class="container">
   <router-outlet></router-outlet>
 </div>
+
+
+<!-- NOTE 
+  
+  [ngClass] pour appliquer la classe CSS "selected" si la méthode IsCoursSelected() renvoie true, 
+  ce qui indique que la page "Cours" est actuellement sélectionnée. 
+  
+Le lien est conditionné par *ngIf="security.isConnected()", ce qui signifie qu'il ne sera affiché que si l'utilisateur est connecté.
+
+-->

@@ -17,30 +17,50 @@
                     <!--Students' information-->
                     <td>{{ student.FirstName }} {{ student.LastName }}</td>
                     <!-- Display the students' grade in an input text box-->
-                    <td *ngIf="student.Grade">{{ student.Grade }}</td>
-                    <td *ngIf="!student.Grade">N/A</td>
-
-                    <!-- <td *ngIf="!student.editMode">
-                        <span (click)="editGrade(student)">{{ student.Grade || 'N/A' }}</span>
+                    <td>
+                        <input style="width:30px;" type="text" [(ngModel)]="student.Grade" />
+                        <button style="margin-left:5px;" (click)="updateStudentGrade(student)">
+                            <i class="fa-solid fa-check"></i></button>
                     </td>
-                    <td *ngIf="student.editMode">
-                        <input type="text" [(ngModel)]="student.Grade" (blur)="saveGrade(student)" />
-                    </td> -->
 
                     <!--Delete button-->
-                    <td><button (click)="confirmRemove(student)">Supprimer</button></td>
+                    <!-- <td><button (click)="confirmRemove(student)">Supprimer</button></td> -->
+                    <td><button (click)="confirmRemove(student)"><i class="fa fa-trash"
+                                style="font-size: 15px"></i></button>
+                    </td>
+
                 </tr>
             </tbody>
         </table>
     </div>
     <div class="professor-details">
-        <div class="professor-info">Professeur</div>
         <div *ngFor="let course of courses">
-            <span
-                *ngIf="course.CourseId === currentCourseID && course.Semester === currentCourseSemester">{{course.Semester}}:
-                {{course.TeacherFirstName}}
-                {{course.TeacherLastName}}</span>
+            <div *ngIf="course.CourseId === currentCourseID && course.Semester === currentCourseSemester">
+                <div class="toggleTeacher">Informations sur le
+                    professeur</div>
+                <div *ngIf="showTeacherDetails">
+                    <mat-form-field class="custom-selectTeacher">
+                        <mat-label>Professeur</mat-label>
+                        <mat-select (selectionChange)="updateTeacher()" required [(value)]="selectedTeacher">
+                            <!--$event.value i-->
+                            <mat-option *ngFor="let teacher of teachers" [value]="teacher.Id">{{teacher.FirstName}}
+                                {{teacher.LastName}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+                    <div>Semestre: {{course.Semester}}</div>
+                    <div>Horaire: {{ course.Schedule }}</div>
+                    <div>Lieu: {{course.Location}}</div>
+                </div>
+            </div>
         </div>
     </div>
     <button class="delete-btn" (click)="closeModal.emit()">X</button>
 </div>
+
+<!-- NOTE
+
+    Cette page affiche les détails d'un cours sélectionné, 
+y compris la liste des étudiants inscrits et les informations du professeur. 
+
+-->

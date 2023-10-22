@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { SecurityService } from '../security.service';
 import { Router } from '@angular/router';
 
+// LoginComponent est responsable de la gestion de la page de connexion de votre application Angular.  
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent {
 
   constructor(public security: SecurityService, private router: Router) { }
 
-  // on a besoins de 2 variables : username and password
+  // on a besoins 3 variables : username, password, errorMessage (en cas d'echec de la connexion => button Connexion)
   username: string = "";
   password: string = "";
   errorMessage: string = "";

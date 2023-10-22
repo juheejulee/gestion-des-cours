@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { SecurityService } from './security.service';
 
+// app.component.ts : ceci semble être le composant principal de l'application Angular, 
+// responsable de la gestion de l'interface utilisateur globale, de la navigation et de l'authentification. 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,10 +18,10 @@ export class AppComponent {
 
   // si user pas connecte, page navigate --> login page
   ngOnInit() {
-    //TODO: REVERT BACK
-    // if (!this.security.isConnected()) {
-    //   this.router.navigate(['login']);
-    // }
+    // TODO: REVERT BACK
+    if (!this.security.isConnected()) {
+      this.router.navigate(['login']);
+    }
   }
 
   logout() {

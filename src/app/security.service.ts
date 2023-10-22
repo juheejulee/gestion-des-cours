@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { DataService } from './data.service';
 import { BehaviorSubject } from 'rxjs';
 
-// structure de donnees
+// structure de donnees pour representer la structure de donnees de la reponse attendue de service de donnees
 interface CollegeResponse {
   status: string;
   message: string;
@@ -13,6 +13,7 @@ interface CollegeResponse {
   providedIn: 'root'
 })
 
+// ce service sera automatiquement injecté dans n'importe quel composant ou service qui en dépend lorsqu'il est requis.
 export class SecurityService {
 
   constructor(private data: DataService) { }
@@ -23,8 +24,8 @@ export class SecurityService {
 
   isConnected(): boolean {
     return true;
-    //TODO: REVERT BACK
-    // return this.connected.getValue(); // retourner la valeur de la variable si elle est true ou false
+    // TODO: REVERT BACK
+    return this.connected.getValue(); // retourner la valeur de la variable si elle est true ou false
   }
 
   // if user id and password is good
@@ -34,6 +35,8 @@ export class SecurityService {
     this.data.validateUser(user, password).subscribe((response: CollegeResponse) => this.validateCredentialsObserved(response));
   }
 
+  // Cette méthode appelle this.data.validateUser(user, password) pour valider les informations d'identification de l'utilisateur 
+  // en utilisant le service de données 
   validateCredentialsObserved(response: CollegeResponse) {
     console.log('response', response)
 
@@ -44,7 +47,7 @@ export class SecurityService {
       this.connected.next(false);
     }
   }
-
+  // Cette méthode est appelée pour déconnecter l'utilisateur en mettant connected à false.
   logout(): void {
     this.connected.next(false);
   }

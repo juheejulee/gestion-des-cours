@@ -10,7 +10,7 @@
     </thead>
     <tbody>
         <!-- Use *ngFor to iterate through the courses array and display each course -->
-        <tr *ngFor="let course of courses" (click)="showDetails(course.CourseId, course.Semester)">
+        <tr *ngFor="let course of courses" (click)="showDetails(course)">
             <td>{{ course.Semester }}</td>
             <td>{{ course.Department }}</td>
             <td>{{ course.Course }}</td>
@@ -22,5 +22,13 @@
 </table>
 
 <!--call cours-details-->
-<app-cours-details *ngIf="showCourseDetails" (closeModal)="showCourseDetails = false" [students]="courseStudents"
-    [courses]="courses" [currentCourseID]="currentCourseID" [currentCourseSemester]="currentCourseSemester" />
+<app-cours-details *ngIf="showCourseDetails" (closeModal)="showCourseDetails = false" (refreshPage)="fetchData()"
+    [students]="courseStudents" [courses]="courses" [currentCourseID]="currentCourseID"
+    [currentCourseSemester]="currentCourseSemester" [currentSemesterID]="currentSemesterID" [teachers]="teachers" />
+<!--apres aller voir cours.component.ts-->
+
+
+<!-- NOTE
+cours.component.html
+qui affiche les détails des cours à l'aide de *ngFor pour itérer à travers un tableau de cours (courses).
+-->
