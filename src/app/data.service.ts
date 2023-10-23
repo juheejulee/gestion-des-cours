@@ -44,7 +44,7 @@ export class DataService {
 
   courseSemesterStudentGetAll(courseID: number, semesterID: number): Observable<CollegeResponse> {
     let method = 'CourseSemesterStudentGetAll';
-    let parameters = { parameters: [semesterID.toString(), courseID.toString()] };
+    let parameters = { parameters: [courseID.toString(), semesterID.toString()] };
     let urlToCall: string = "https://localhost:" + this.port.toString() + "/College?method=" + method + "&parameters=" + JSON.stringify(parameters);
 
     return this.http.get<CollegeResponse>(urlToCall);
@@ -58,17 +58,17 @@ export class DataService {
     return this.http.get<CollegeResponse>(urlToCall);
   }
 
-  deleteStudent(studentID: number, semesterID: number): Observable<CollegeResponse> {
+  deleteStudent(studentID: number, courseSemesterID: number): Observable<CollegeResponse> {
     let method = 'CourseSemesterStudentDelete';
-    let parameters = { parameters: [semesterID.toString(), studentID.toString()] };
+    let parameters = { parameters: [courseSemesterID.toString(), studentID.toString()] };
     let urlToCall: string = "https://localhost:" + this.port.toString() + "/College?method=" + method + "&parameters=" + JSON.stringify(parameters);
 
     return this.http.delete<CollegeResponse>(urlToCall);
   }
 
-  CourseSemesterStudentUpdateGrade(studentID: number, semesterID: number, grade: number): Observable<CollegeResponse> {
+  CourseSemesterStudentUpdateGrade(studentID: number, courseSemesterID: number, grade: number): Observable<CollegeResponse> {
     let method = 'CourseSemesterStudentUpdateGrade';
-    let body = { parameters: [semesterID.toString(), studentID.toString(), grade.toString()] };
+    let body = { parameters: [courseSemesterID.toString(), studentID.toString(), grade.toString()] };
     let urlToCall: string = "https://localhost:" + this.port.toString() + "/College?method=" + method + "&parameters=" + JSON.stringify(body);
 
     return this.http.patch<CollegeResponse>(urlToCall, body);

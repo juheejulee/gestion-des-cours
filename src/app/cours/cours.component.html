@@ -24,7 +24,8 @@
 <!--call cours-details-->
 <app-cours-details *ngIf="showCourseDetails" (closeModal)="showCourseDetails = false" (refreshPage)="fetchData()"
     [students]="courseStudents" [courses]="courses" [currentCourseID]="currentCourseID"
-    [currentCourseSemester]="currentCourseSemester" [currentSemesterID]="currentSemesterID" [teachers]="teachers" />
+    [currentCourseSemester]="currentCourseSemester" [currentSemesterID]="currentSemesterID"
+    [currentCourseSemesterID]="currentCourseSemesterID" [teachers]="teachers" />
 <!--apres aller voir cours.component.ts-->
 
 

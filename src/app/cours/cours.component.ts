@@ -17,6 +17,7 @@ export class CoursComponent {
   courseStudents: string[] = [];
   currentCourseID: number = 0;
   currentCourseSemester: string = '';
+  currentCourseSemesterID: number = 0;
   currentSemesterID: number = 0;
   showCourseDetails: boolean = false;
 
@@ -52,6 +53,7 @@ export class CoursComponent {
         this.currentCourseID = course.CourseId;
         this.currentCourseSemester = course.Semester;
         this.currentSemesterID = course.SemesterId;
+        this.currentCourseSemesterID = course.Id;
       } else {
         console.log('Error fetching courses:', response.message)
       }

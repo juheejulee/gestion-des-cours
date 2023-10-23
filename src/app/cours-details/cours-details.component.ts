@@ -20,6 +20,7 @@ export class CoursDetailsComponent {
   @Input() teachers: any[] = [];
   @Input() currentCourseID: number = 0;
   @Input() currentCourseSemester: string = '';
+  @Input() currentCourseSemesterID: number = 0;
   @Input() currentSemesterID: number = 0;
 
   showTeacherDetails: boolean = true; // Boolean pour afficher ou masquer les détails du professeur.
@@ -62,7 +63,7 @@ export class CoursDetailsComponent {
   }
 
   updateStudentGrade(student: any) {
-    this.data.CourseSemesterStudentUpdateGrade(student.StudentId, this.currentSemesterID, student.Grade).subscribe((response: any) => {
+    this.data.CourseSemesterStudentUpdateGrade(student.StudentId, this.currentCourseSemesterID, student.Grade).subscribe((response: any) => {
       if (response.status === 'success') {
         console.log('new grade for ' + student.FirstName + ' ' + student.LastName + ': ' + student.Grade);
       } else {
@@ -72,7 +73,7 @@ export class CoursDetailsComponent {
   }
 
   updateTeacher() {
-    this.data.CourseSemesterUpdateTeacher(this.currentSemesterID, this.selectedTeacher).subscribe((response: any) => {
+    this.data.CourseSemesterUpdateTeacher(this.currentCourseSemesterID, this.selectedTeacher).subscribe((response: any) => {
       if (response.status === 'success') {
         this.refreshPage.emit(true);
         console.log('updated teacher with ID' + this.selectedTeacher);
