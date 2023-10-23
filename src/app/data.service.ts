@@ -42,9 +42,9 @@ export class DataService {
     return this.http.get<CollegeResponse>(urlToCall);
   }
 
-  courseSemesterStudentGetAll(courseID: number): Observable<CollegeResponse> {
+  courseSemesterStudentGetAll(courseID: number, semesterID: number): Observable<CollegeResponse> {
     let method = 'CourseSemesterStudentGetAll';
-    let parameters = { parameters: [courseID.toString()] };
+    let parameters = { parameters: [semesterID.toString(), courseID.toString()] };
     let urlToCall: string = "https://localhost:" + this.port.toString() + "/College?method=" + method + "&parameters=" + JSON.stringify(parameters);
 
     return this.http.get<CollegeResponse>(urlToCall);

@@ -45,7 +45,7 @@ export class CoursComponent {
 
   // Cette méthode est appelée lorsque l'utilisateur clique sur une ligne de cours. 
   showDetails(course: any) {
-    this.data.courseSemesterStudentGetAll(course.SemesterId).subscribe((response: any) => {
+    this.data.courseSemesterStudentGetAll(course.SemesterId, course.CourseId).subscribe((response: any) => {
       if (response.status === 'success') {
         this.courseStudents = response.data;
         this.showCourseDetails = true;
