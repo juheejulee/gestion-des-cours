@@ -15,6 +15,7 @@ import { CoursDetailsComponent } from './cours-details/cours-details.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { Sort, MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MatInputModule } from '@angular/material/input';
     FontAwesomeModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,16 +1,40 @@
+<div class="filters-bar">
+    <h4>Filtrer par nom du cours</h4>
+    <mat-form-field>
+        <mat-label>Cours</mat-label>
+        <mat-select (selectionChange)="filterCourses(true)" [(value)]="selectedCourseName">
+            <mat-option [value]="">Enlever filtre</mat-option>
+            <mat-option *ngFor="let courseName of courseNames" [value]="courseName">
+                {{courseName}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <h4>Filtrer par semestre</h4>
+    <mat-form-field>
+        <mat-label>Semestre</mat-label>
+        <mat-select (selectionChange)="filterCourses(true)" [(value)]="selectedSemester">
+            <mat-option [value]="">Enlever filtre</mat-option>
+            <mat-option *ngFor="let semesterName of semesterNames" [value]="semesterName">
+                {{semesterName}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+</div>
 <!-- <h1>Liste de tous les cours</h1> -->
-<table class="table">
+<table class="table" matSort (matSortChange)="sortData($event)">
     <thead>
         <tr>
-            <th>Session</th>
-            <th>Departement</th>
-            <th>Cours</th>
-            <th>Professeur</th>
+            <th mat-sort-header="session">Session</th>
+            <th mat-sort-header="departement">Departement</th>
+            <th mat-sort-header="cours">Cours</th>
+            <th mat-sort-header="professeur">Professeur</th>
         </tr>
     </thead>
     <tbody>
         <!-- Use *ngFor to iterate through the courses array and display each course -->
-        <tr *ngFor="let course of courses" (click)="showDetails(course)">
+        <tr *ngFor="let course of sortedCourses" (click)="showDetails(course)">
             <td>{{ course.Semester }}</td>
             <td>{{ course.Department }}</td>
             <td>{{ course.Course }}</td>

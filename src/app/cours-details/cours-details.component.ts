@@ -49,7 +49,7 @@ export class CoursDetailsComponent {
 
   // Method to remove a student from the list
   removeStudent(student: any) {
-    this.data.deleteStudent(student.StudentId, this.currentSemesterID).subscribe((response: any) => {
+    this.data.deleteStudent(student.StudentId, this.currentCourseSemesterID).subscribe((response: any) => {
       if (response.status === 'success') {
         console.log('deleted ' + student.FirstName + ' ' + student.LastName);
         const studentIndex = this.students.indexOf(student);
