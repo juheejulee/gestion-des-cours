@@ -23,8 +23,6 @@ export class SecurityService {
   public connected = new BehaviorSubject<boolean>(false);
 
   isConnected(): boolean {
-    return true;
-    // TODO: REVERT BACK
     return this.connected.getValue(); // retourner la valeur de la variable si elle est true ou false
   }
 
