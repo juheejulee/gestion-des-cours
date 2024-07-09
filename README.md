@@ -5,6 +5,9 @@ SVP run npm install avant de lancer le projet
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+# ID and Password
+ID : user1
+Password : user1pw
 
 # College
 
