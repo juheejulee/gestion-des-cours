@@ -1,3 +1,10 @@
+## NOTE POUR VOUS
+SVP run npm install avant de lancer le projet
+
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+
 # College
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
