@@ -1,0 +1,36 @@
+<div class="login-page">
+    <!-- Utilisateur container -->
+    <div class="center-container-username">
+        <div class="center-content">
+            Utilisateur :
+        </div>
+        <div class="center-content">
+            <input type="text" [(ngModel)]="username" />
+        </div>
+    </div>
+    <br />
+
+    <!-- Mot de passe container -->
+    <div class="center-container-password">
+        <div class="center-content">
+            Mot de passe :
+        </div>
+        <div class="center-content">
+            <input type="password" [(ngModel)]="password" />
+        </div>
+    </div>
+    <br />
+
+    <!-- Connexion button -->
+    <div class="center-container-button">
+        <button (click)="btnLogin()">Connexion</button>
+    </div>
+    <div class="error">{{errorMessage}}</div>
+</div>
+
+<!-- NOTE
+
+Le code HTML que nous avez fourni semble être le modèle de notre composant de connexion (LoginComponent). 
+Il s'agit de l'interface utilisateur pour la saisie des informations d'identification de l'utilisateur. 
+
+-->

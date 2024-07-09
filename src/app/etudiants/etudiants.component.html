@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Prenom</th>
+            <th>Nom</th>
+            <th>Telephone</th>
+            <th>Courriel</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Use *ngFor to iterate through the students array and display each course -->
+        <tr *ngFor="let etudiant of etudiants">
+            <td>{{ etudiant.LastName }}</td>
+            <td>{{ etudiant.FirstName }}</td>
+            <td>{{ etudiant.Phone }}</td>
+            <td>{{ etudiant.Email }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- NOTE
+
+Le code HTML que vous avez fourni semble être le modèle de votre composant "Étudiants" (EtudiantsComponent). 
+Il s'agit d'un tableau HTML qui affiche les détails des étudiants à l'aide de *ngFor pour itérer à travers un tableau d'étudiants 
+
+-->

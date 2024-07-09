@@ -1,0 +1,27 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+* {
+    color: #7a8aaa;
+}
+
+thead {
+    text-align: left;
+    background-color: #cbdbe4;
+}
+
+.table tr {
+    border-bottom: 1px solid #eeeeee;
+    cursor: pointer;
+}
+
+.table tr:hover {
+    background-color: #eeeeee;
+}
+
+.table th,
+td {
+    padding: 10px;
+}

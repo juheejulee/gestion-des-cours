@@ -1,0 +1,59 @@
+<div class="filters-bar">
+    <h4>Filtrer par nom du cours</h4>
+    <mat-form-field>
+        <mat-label>Cours</mat-label>
+        <mat-select (selectionChange)="filterCourses(true)" [(value)]="selectedCourseName">
+            <mat-option [value]="">Enlever filtre</mat-option>
+            <mat-option *ngFor="let courseName of courseNames" [value]="courseName">
+                {{courseName}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <h4>Filtrer par semestre</h4>
+    <mat-form-field>
+        <mat-label>Semestre</mat-label>
+        <mat-select (selectionChange)="filterCourses(true)" [(value)]="selectedSemester">
+            <mat-option [value]="">Enlever filtre</mat-option>
+            <mat-option *ngFor="let semesterName of semesterNames" [value]="semesterName">
+                {{semesterName}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+</div>
+<!-- <h1>Liste de tous les cours</h1> -->
+<table class="table" matSort (matSortChange)="sortData($event)">
+    <thead>
+        <tr>
+            <th mat-sort-header="session">Session</th>
+            <th mat-sort-header="departement">Departement</th>
+            <th mat-sort-header="cours">Cours</th>
+            <th mat-sort-header="professeur">Professeur</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Use *ngFor to iterate through the courses array and display each course -->
+        <tr *ngFor="let course of sortedCourses" (click)="showDetails(course)">
+            <td>{{ course.Semester }}</td>
+            <td>{{ course.Department }}</td>
+            <td>{{ course.Course }}</td>
+            <td *ngIf="course.TeacherFirstName && course.TeacherLastName">{{ course.TeacherFirstName + ' ' +
+                course.TeacherLastName }}</td>
+            <td *ngIf="!course.TeacherFirstName || !course.TeacherLastName">N/A</td>
+        </tr>
+    </tbody>
+</table>
+
+<!--call cours-details-->
+<app-cours-details *ngIf="showCourseDetails" (closeModal)="showCourseDetails = false" (refreshPage)="fetchData()"
+    [students]="courseStudents" [courses]="courses" [currentCourseID]="currentCourseID"
+    [currentCourseSemester]="currentCourseSemester" [currentSemesterID]="currentSemesterID"
+    [currentCourseSemesterID]="currentCourseSemesterID" [teachers]="teachers" />
+<!--apres aller voir cours.component.ts-->
+
+
+<!-- NOTE
+cours.component.html
+qui affiche les détails des cours à l'aide de *ngFor pour itérer à travers un tableau de cours (courses).
+-->
